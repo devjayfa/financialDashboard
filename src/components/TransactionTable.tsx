@@ -1,13 +1,15 @@
 import StatusButton from "./StatusButton";
 
-export default function TransactionTable() {
-  const data = [
-    { name: "Salary", category: "Income", date: "2026-04-01", amount: 2000, type: "income" },
-    { name: "Grocery", category: "Food", date: "2026-04-02", amount: 120, type: "expense" },
-    { name: "Uber", category: "Transport", date: "2026-04-02", amount: 25, type: "expense" },
-    { name: "Uber", category: "Transport", date: "2026-04-02", amount: 25, type: "expense" },
-    { name: "Uber", category: "Transport", date: "2026-04-02", amount: 25, type: "expense" },
-  ];
+interface TransactionTableProps {
+  data: any[];
+  headers?: string[];
+}
+
+export default function TransactionTable({ 
+  data, 
+  headers 
+}: TransactionTableProps) {
+ 
 
   return (
    <div className="bg-gray-50 rounded-xl shadow overflow-hidden">
@@ -16,11 +18,12 @@ export default function TransactionTable() {
 
     <thead>
       <tr className="bg-gray-300 text-left text-[#2A0134]">
-        <th className="py-3 px-4">Name</th>
-        <th className="py-3 px-4">Category</th>
-        <th className="py-3 px-4">Date</th>
-        <th className="py-3 px-4">Amount</th>
-        <th className="py-3 px-4">Type</th>
+        {
+          headers?.map((header, index) => (
+            <th key={index} className="py-3 px-4">{header}</th>
+          ))
+        }
+        
       </tr>
     </thead>
 
@@ -30,11 +33,11 @@ export default function TransactionTable() {
           key={index}
           className="border-t text-gray-500 border-gray-200 hover:bg-gray-50"
         >
-          <td className="py-3 px-4">{item.name}</td>
+         
           <td className="py-3 px-4">{item.category}</td>
           <td className="py-3 px-4">{item.date}</td>
 
-          <td className={`py-3 px-4 font-semibold text-[#2A0134] `}>
+          <td className={`py-3 px-4  text-gfray-500 `}>
             ${" "}{item.amount}
           </td>
 

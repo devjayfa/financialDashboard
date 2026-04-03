@@ -1,10 +1,17 @@
 
+import { useSelector } from 'react-redux';
 import DropDown from '../components/DropDown'
 import Pagination from '../components/Pagination'
 import SearchBar from '../components/SearchBar'
 import TransactionTable from '../components/TransactionTable'
 
 export default function Transaction() {
+
+   
+  const selectedUserId = useSelector((state: any) => state.user.selectedUserId);
+  const transactions = useSelector((state: any) => state.transaction.transactions);
+  const userTransactions = transactions.filter((t: any) => t.userId === selectedUserId);
+ 
   return (
 
 
@@ -16,10 +23,13 @@ export default function Transaction() {
                </div>
 
             <div className="w-1/4">
-                <DropDown />
+                {/* <DropDown /> */}
             </div>
              </div>
-           <TransactionTable/>
+           <TransactionTable
+           data={userTransactions}
+           headers={[ "Category", "Date", "Amount","Type"]}
+           />
            <div className='w-full flex flex-col justify-center items-center'>
             <Pagination/>
            </div>

@@ -4,9 +4,14 @@ import Transaction from "./Pages/Transaction";
 import Insights from "./Pages/Insights";
 import Sidebar from "./components/Sidebar";
 import HeaderBar from "./components/Header";
+import { useSelector } from "react-redux";
 
 
 const MainLayout = () => {
+
+   const users = useSelector((state: any) => state.user.users);
+  const selectedUserId = useSelector((state: any) => state.user.selectedUserId);
+  const selectedUser = users.find((u: any) => u.id === selectedUserId);
   const [activeMenu, setActiveMenu] = useState("dashboard");
 
   const menuItems = [
@@ -31,13 +36,22 @@ const MainLayout = () => {
 
   return (
     <div className="flex">
+      <div className=" hidden lg:block" >
       <Sidebar
         menuItems={menuItems}
         activeMenu={activeMenu}
         onMenuClick={(id) => setActiveMenu(id)}
       />
-      <div className="flex-1 bg-gray-200 min-h-screen">
-        <HeaderBar />
+      </div>
+      <div className="w-full flex-1 bg-white lg:bg-gray-200 min-h-screen">
+        <HeaderBar 
+          selectedUser={selectedUser}
+          users={users}
+          menuItems={menuItems}
+           activeMenu={activeMenu}
+          onMenuClick={(id: string) => setActiveMenu(id)}
+
+        />
        
           {renderPage()}
        

@@ -4,7 +4,7 @@
 export default function SearchBar() {
   return (
   <div className="hidden md:block">
-  <div className="flex w-full overflow-hidden  bg-white rounded-full border-2 border-[#2A0134]/30">
+  <div className="flex w-full overflow-hidden  bg-white rounded-xl border-2 border-[#2A0134]/30">
     
    
     <input
@@ -14,7 +14,7 @@ export default function SearchBar() {
     />
 
  
-    <div className="bg-[#2A0134] px-6 rounded-full flex items-center justify-center">
+    <div className="bg-[#2A0134] px-6 rounded-xl flex items-center justify-center">
       <svg
         className="w-4 h-4 text-white"
         fill="none"

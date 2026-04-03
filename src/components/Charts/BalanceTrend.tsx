@@ -25,9 +25,9 @@ const data = [
 
 export default function BalanceTrend() {
   return (
-    <div className="bg-white p-5  rounded-md shadow w-full h-100">
+    <div className="bg-white px-2 py-7 lg:p-5  rounded-md shadow-lg lg:shadow w-full h-50 lg:h-100">
       
-      <h2 className="text-lg font-semibold mb-4">
+      <h2 className="text-base text-[#2A0134] lg:text-[black] lg:text-lg font-semibold mb-4">
         Balance Trend
       </h2>
 
@@ -35,9 +35,11 @@ export default function BalanceTrend() {
         <LineChart data={data}>
 
           <CartesianGrid strokeDasharray="2 3" />
-
-          <XAxis dataKey="day" />
-          <YAxis />
+              {/* <YAxis  /> */}
+          
+           
+          {/* <XAxis dataKey="day"  tick={{ fontSize: 10, color:"text-[#2A0134]" }} /> */}
+          
 
           <Tooltip />
 
@@ -53,5 +55,6 @@ export default function BalanceTrend() {
       </ResponsiveContainer>
 
     </div>
+    
   );
 }

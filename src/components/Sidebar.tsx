@@ -19,7 +19,7 @@ export default function Sidebar({
   return (
     <div className="h-screen w-64 bg-white border-r border-gray-200 p-5">
 
-<div className="flex items-center gap-3 text-xl font-bold text-gray-800 mb-8">
+<div className="hidden lg:flex items-center gap-3 text-xl font-bold text-gray-800 mb-8">
          <img
           src="/logo.jpg"
           alt="Logo"
@@ -28,7 +28,7 @@ export default function Sidebar({
 
           <span>Banaraz</span>
           </div>
-      <nav className="space-y-2">
+      <nav className="flex lg:block space-y-2">
         {
            menuItems?.map((item,index) => (
             <div
