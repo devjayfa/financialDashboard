@@ -1,9 +1,9 @@
-import { useState } from "react";
+
 
 export default function Pagination() {
-  const [currentPage, setCurrentPage] = useState(1);
+  // const [currentPage, setCurrentPage] = useState(1);
 
-  const pages = [1, 2, 3, 4, 5];
+  // const pages = [1, 2, 3, 4, 5];
 
   return (
     <div className="flex items-center justify-between mt-6 ">

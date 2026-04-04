@@ -21,7 +21,7 @@ export default function DropDown(
  
   
 
-  const options = ["Category", "Category1", "Category2"];
+  // const options = ["Category", "Category1", "Category2"];
 
   return (
     <div className="relative w-full">
@@ -47,7 +47,7 @@ export default function DropDown(
              
             <span className="ml-3 text-gray-700">{item.label}</span>
             </div>
-            <div className="border-1 border-gray-100 "/>
+            <div className="border border-gray-100 "/>
             </>
           ))}
         </div>
