@@ -25,7 +25,7 @@ icon
 
 }: SummaryCardProps) {
   return (
-    <div className="bg-[#2A0134]/12 lg:bg-white px-3 lg:px-4 py-2 lg:py-4 rounded-lg lg:rounded-md  lg:border shadow-lg lg:shadow-md border-[#2A0134]/30 lg:border-[#2A0134]/10 hover:shadow-lg hover:scale-[1.02] transition-all duration-300  lg:max-full">
+    <div className="bg-white lg:bg-white px-3 lg:px-4 py-2 lg:py-4 rounded-lg lg:rounded-md  lg:border shadow-xl lg:shadow-md  lg:border-[#2A0134]/10 hover:shadow-lg hover:scale-[1.02] transition-all duration-300  lg:max-full">
       <div className="flex justify-between items-center"> 
         {   isIconshow &&(
         <div className="w-8 h-8 hidden lg:flex rounded-full bg-[#2A0134]/10  items-center justify-center">
