@@ -1,34 +1,33 @@
 
 
 import BalanceTrend from '../components/Charts/BalanceTrend'
-import SpendingBarChart from '../components/Charts/SpendingBarChart'
+
 import InsightCard from '../components/InsightCard'
-import SummaryCard from '../components/SummaryCard'
 
 
 export default function Insights() {
-    const insights=
-        {
-            icon:"",
-            title:"Top Spending",
-            value:"Food & Drinks",
-            subtext:"12,500 this month",
-            minibadge : "overspending"
-        }
-       const month=  {
-            icon:"",
-            title:"Monthly Change",
-            value:"-8.2%",
-            subtext:"You ",
-            minibadge : "Overspending"
-        }
-       const trend=  {
-            icon:"",
-            title:"Spending Trend",
-            value:"Increasing",
-            subtext:"Your spend",
-            minibadge : "overspending"
-        }
+    // const insights=
+    //     {
+    //         icon:"",
+    //         title:"Top Spending",
+    //         value:"Food & Drinks",
+    //         subtext:"12,500 this month",
+    //         minibadge : "overspending"
+    //     }
+    //    const month=  {
+    //         icon:"",
+    //         title:"Monthly Change",
+    //         value:"-8.2%",
+    //         subtext:"You ",
+    //         minibadge : "Overspending"
+    //     }
+    //    const trend=  {
+    //         icon:"",
+    //         title:"Spending Trend",
+    //         value:"Increasing",
+    //         subtext:"Your spend",
+    //         minibadge : "overspending"
+    //     }
     
   return (
 
