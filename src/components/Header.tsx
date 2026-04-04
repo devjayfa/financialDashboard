@@ -112,7 +112,7 @@ export default function HeaderBar(
         {item.label}
       </span>
       {activeMenu === item.id && (
-        <div className=" absolute  mt-7 h-[2px] w-26 bg-purple-300 rounded-full"></div>
+        <div className=" absolute  mt-7 h-0.5 w-26 bg-purple-300 rounded-full"></div>
       )}
     </button>
   ))}

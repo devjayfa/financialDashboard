@@ -34,13 +34,13 @@ export default function Transaction() {
              </div>
              <div className='block lg:hidden '>
              <MobileTrasactionView/>
-              <div className="   h-[2px] w-full bg-gray-300 rounded-full"/>
+              <div className="   h-0.5 w-full bg-gray-300 rounded-full"/>
               <MobileTrasactionView/>
-              <div className="   h-[2px] w-full bg-gray-300 rounded-full"/>
+              <div className="   h-0.5 w-full bg-gray-300 rounded-full"/>
               <MobileTrasactionView/>
-              <div className="  h-[2px] w-full bg-gray-300 rounded-full"/>
+              <div className="  h-0.5 w-full bg-gray-300 rounded-full"/>
               <MobileTrasactionView/>
-              <div className="  h-[2px] w-full bg-gray-300 rounded-full"/>
+              <div className="  h-0.5 w-full bg-gray-300 rounded-full"/>
              <div/>
              </div>
 

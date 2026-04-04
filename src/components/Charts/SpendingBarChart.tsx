@@ -24,7 +24,7 @@ export default function SpendingBarChart() {
 ];
 
   return (
-    <div className="bg-white py-9 px-3 rounded-2xl shadow-md w-full h-[400px]">
+    <div className="bg-white py-9 px-3 rounded-2xl shadow-md w-full h-100">
       <h2 className="text-lg font-semibold mb-4 text-[#2A0134]">
         Monthly Spending by Category
       </h2>
