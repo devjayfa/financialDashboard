@@ -3,18 +3,18 @@
 
 export default function SearchBar() {
   return (
-  <div className="hidden md:block">
-  <div className="flex w-full overflow-hidden  bg-white rounded-xl border-2 border-[#2A0134]/30">
+  <div className=" block">
+  <div className="flex w-full  overflow-hidden  bg-white rounded-full lg:rounded-xl border-2 border-[#2A0134]/30">
     
    
     <input
       type="text"
       placeholder="Search here"
-      className="flex-1 px-4 py-3 text-sm text-[#2A0134] focus:outline-none"
+      className="flex-1 px-4 py-2 lg:py-3 text-sm text-[#2A0134] focus:outline-none"
     />
 
  
-    <div className="bg-[#2A0134] px-6 rounded-xl flex items-center justify-center">
+    <div className="bg-[#2A0134] px-6 rounded-full lg:rounded-xl flex items-center justify-center">
       <svg
         className="w-4 h-4 text-white"
         fill="none"

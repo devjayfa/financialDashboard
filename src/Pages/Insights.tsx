@@ -1,5 +1,8 @@
 
 
+import BalanceTrend from '../components/Charts/BalanceTrend'
+import SpendingBarChart from '../components/Charts/SpendingBarChart'
+import InsightCard from '../components/InsightCard'
 import SummaryCard from '../components/SummaryCard'
 
 
@@ -10,21 +13,21 @@ export default function Insights() {
             title:"Top Spending",
             value:"Food & Drinks",
             subtext:"12,500 this month",
-            minibadge : "+18 from last month"
+            minibadge : "overspending"
         }
        const month=  {
             icon:"",
             title:"Monthly Change",
             value:"-8.2%",
-            subtext:"You spent less than last month",
+            subtext:"You ",
             minibadge : "Overspending"
         }
        const trend=  {
             icon:"",
             title:"Spending Trend",
             value:"Increasing",
-            subtext:"Your spending is rising steadily",
-            minibadge : "+18 from last month"
+            subtext:"Your spend",
+            minibadge : "overspending"
         }
     
   return (
@@ -36,73 +39,101 @@ export default function Insights() {
       
       {/* Page Title */}
 
-       <div className="bg-red-800 to-purple-600 text-white p-6 rounded-2xl shadow-lg">
+     <div className="bg-red-800 text-white p-4 sm:p-6 rounded-2xl shadow-lg">
 
   {/* Header */}
-  <div className="flex items-center justify-between mb-3">
+  <div className="flex items-start sm:items-center justify-between mb-3 gap-2">
+    
     <div className="flex items-center gap-2">
-      <span className="text-2xl">🧠</span>
-      <h2 className="text-lg font-semibold">Smart Financial Insight</h2>
+      <span className="text-xl sm:text-2xl">🧠</span>
+      <h2 className="text-sm sm:text-lg font-semibold leading-tight">
+        Smart Insight
+      </h2>
     </div>
-    <span className="bg-white/20 px-3 py-1 rounded-full text-xs">
+
+    <span className="bg-white/20 px-2 py-1 rounded-full text-[10px] sm:text-xs whitespace-nowrap">
       Moderate Risk
     </span>
   </div>
 
-  {/* Main Message */}
-  <p className="text-sm leading-relaxed mb-3">
-    Your spending increased by <span className="font-bold">18%</span> this month,
-    mainly driven by <span className="font-bold">Food & Drinks</span>.
-    This is higher than your usual pattern.
+  {/* Main Message (short on mobile) */}
+  <p className="text-xs sm:text-sm leading-relaxed mb-2 sm:mb-3">
+    Spending ↑ <span className="font-bold">18%</span> this month,
+    mainly <span className="font-bold">Food & Drinks</span>.
   </p>
 
-  {/* Suggestion */}
-  <p className="text-xs text-white/80">
-    💡 Consider reducing daily food expenses or setting a weekly budget to improve your savings.
+  {/* Suggestion (hidden on very small screens optional) */}
+  <p className="hidden sm:block text-xs text-white/80">
+    💡 Try reducing food expenses or set a weekly budget to save more.
   </p>
 
 </div>
-     
-      {/* Insights Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        
-             <SummaryCard
-               icon={insights.icon}
-               title={insights.title}
-               amount={insights.value}
-               feedback={insights.subtext}
-               percentageOfIncreseDecrease={insights.minibadge}
-             />
+      
          
-                <SummaryCard
-               icon={month.icon}
-               title={month.title}
-               amount={month.value}
-               feedback={month.subtext}
-               percentageOfIncreseDecrease={month.minibadge}
-             />
-               <SummaryCard
-               icon={trend.icon}
-               title={trend.title}
-               amount={trend.value}
-               feedback={trend.subtext}
-               percentageOfIncreseDecrease={trend.minibadge}
-             />   
-              <SummaryCard
-               icon={trend.icon}
-               title={trend.title}
-               amount={trend.value}
-               feedback={trend.subtext}
-               percentageOfIncreseDecrease={trend.minibadge}
-             />   
-              <SummaryCard
-               icon={trend.icon}
-               title={trend.title}
-               amount={trend.value}
-               feedback={trend.subtext}
-               percentageOfIncreseDecrease={trend.minibadge}
-             />   
-      </div>
+  <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-6 ">
+
+  <div className="grid grid-cols-2 gap-4">
+    
+    <InsightCard
+      title="Most"
+      value="Shopping"
+      amount="LKR 15,000"
+      color="text-red-500"
+    />
+
+    <InsightCard
+      title="Lowest "
+      value="Bills"
+      amount="LKR 5,000"
+      color="text-green-500"
+    />
+
+    <InsightCard
+      title="Average"
+      value="All Categories"
+      amount="LKR 10,666"
+      color="text-blue-500"
+    />
+    <InsightCard
+      title="Average"
+      value="All Categories"
+      amount="LKR 10,666"
+      color="text-blue-500"
+    />
+
+  </div>
+   <div className="md:col-span-2">
+    <BalanceTrend />
+  </div>
+
+</div>
+ <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-6 ">
+
+  <div className="grid grid-cols-2 gap-4">
+    
+    <InsightCard
+      title="Most"
+      value="Shopping"
+      amount="LKR 15,000"
+      color="text-red-500"
+    />
+
+    <InsightCard
+      title="Lowest "
+      value="Bills"
+      amount="LKR 5,000"
+      color="text-green-500"
+    />
+
+  
+
+  </div>
+   <div className="md:col-span-2">
+    <BalanceTrend />
+  </div>
+
+</div>
+    
        
       
      

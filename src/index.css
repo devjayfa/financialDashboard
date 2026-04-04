@@ -4,4 +4,11 @@
 body {
   font-family: "Inter", sans-serif;
 }
+.recharts-bar-rectangle:focus {
+  outline: none !important;
+}
+
+.recharts-bar-rectangle {
+  outline: none !important;
+}
 

@@ -1,9 +1,9 @@
 
 import { useSelector } from 'react-redux';
-import DropDown from '../components/DropDown'
 import Pagination from '../components/Pagination'
 import SearchBar from '../components/SearchBar'
 import TransactionTable from '../components/TransactionTable'
+import MobileTrasactionView from '../components/MobileTrasactionView';
 
 export default function Transaction() {
 
@@ -16,9 +16,9 @@ export default function Transaction() {
 
 
    
-        <main className="w-full py-12 px-6 flex flex-col justify-center  gap-5">
-            <div className="flex gap-4 w-full">
-              <div className="w-3/4">
+        <main className="w-full py-12 px-3 lg:px-6 flex flex-col justify-center  gap-5">
+            <div className="block lg:flex gap-4 w-full">
+              <div className="w-full lg:w-3/4">
                  <SearchBar />
                </div>
 
@@ -26,10 +26,28 @@ export default function Transaction() {
                 {/* <DropDown /> */}
             </div>
              </div>
-           <TransactionTable
-           data={userTransactions}
-           headers={[ "Category", "Date", "Amount","Type"]}
-           />
+             <div className='hidden lg:block'>
+             <TransactionTable
+             data={userTransactions}
+             headers={[ "Category", "Date", "Amount","Type"]}
+             />
+             </div>
+             <div className='block lg:hidden '>
+             <MobileTrasactionView/>
+              <div className="   h-[2px] w-full bg-gray-300 rounded-full"/>
+              <MobileTrasactionView/>
+              <div className="   h-[2px] w-full bg-gray-300 rounded-full"/>
+              <MobileTrasactionView/>
+              <div className="  h-[2px] w-full bg-gray-300 rounded-full"/>
+              <MobileTrasactionView/>
+              <div className="  h-[2px] w-full bg-gray-300 rounded-full"/>
+             <div/>
+             </div>
+
+
+
+
+           
            <div className='w-full flex flex-col justify-center items-center'>
             <Pagination/>
            </div>
