@@ -39,7 +39,7 @@ export default function HeaderBar(
     
   return (
     <header className="relative bg-[#2A0134] lg:bg-white border-b border-[#2A0134]/10 px-6 py-12 lg:py-4 block lg:flex
-     items-center justify-between shadow-lg rounded lg:rounded-none  ">
+     items-center justify-between shadow-lg rounded-none  lg:rounded-none  ">
 
     
       <div className=" items-center gap-3 hidden lg:flex">
