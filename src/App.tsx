@@ -43,7 +43,7 @@ const MainLayout = () => {
         onMenuClick={(id) => setActiveMenu(id)}
       />
       </div>
-      <div className="w-full flex-1 bg-white lg:bg-gray-200 min-h-screen">
+      <div className="w-full flex-1 bg-gray-50 lg:bg-gray-200 min-h-screen">
         <HeaderBar 
           selectedUser={selectedUser}
           users={users}
