@@ -34,7 +34,7 @@ export default function Insights() {
 
  
 
-    <main className="w-full py-12 px-6 flex flex-col gap-6">
+    <main className="w-full py-12 px-3 flex flex-col gap-6">
       
       {/* Page Title */}
 
