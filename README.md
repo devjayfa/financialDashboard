@@ -1,5 +1,5 @@
 #Live Demo Url
-https://budgixjayfa.netlify.app/
+https://bugix.netlify.app/
 
 #Locally check:-
 run npm install,
