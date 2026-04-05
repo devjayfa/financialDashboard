@@ -5,10 +5,11 @@ https://budgixjayfa.netlify.app/
 run npm install,
 http://localhost:5173/
 
-#Toolkits
-Redux-for state management
-TypeScript with React vite
-Charts
+#Toolkits:-
+Redux-for state management,
+TypeScript with React vite,
+Charts,
+Tailwind CSS (Styling)
 
 #Responsiveness
 MobileResponsive
