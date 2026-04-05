@@ -23,7 +23,7 @@ export default function ProgressBar({
   <div className="flex items-center gap-4 w-full">
     <div className="flex-1 bg-gray-200 rounded-full h-4.5 lg:h-6 overflow-hidden">
       <div
-        className="h-full bg-[#2A0134]"
+        className={"h-full bg-[#2A0134]/40"}
         style={{ width: percentage}}
       />
     </div>
