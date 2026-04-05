@@ -5,6 +5,7 @@ import Insights from "./Pages/Insights";
 import Sidebar from "./components/Sidebar";
 import HeaderBar from "./components/Header";
 import { useSelector } from "react-redux";
+import "./index.css";
 
 
 const MainLayout = () => {
@@ -22,6 +23,7 @@ const MainLayout = () => {
 
   
   const renderPage = () => {
+    if(selectedUser.role !== "admin"){
     switch (activeMenu) {
       case "dashboard":
         return <UserFinancialDashboard />;
@@ -31,32 +33,34 @@ const MainLayout = () => {
         return <Insights />;
       default:
         return <UserFinancialDashboard />;
+    }}
+    else{
+      return <Transaction/>
     }
   };
 
   return (
-    <div className="flex">
-      <div className=" hidden lg:block" >
-      <Sidebar
+   <div>
+  <div className="hidden lg:block">
+    <Sidebar
+      menuItems={menuItems}
+      activeMenu={activeMenu}
+      onMenuClick={(id) => setActiveMenu(id)}
+    />
+  </div>
+  <div className="lg:ml-64  min-h-screen bg-gray-50 lg:bg-gray-200 "> 
+    <div className="w-full">
+      <HeaderBar
+        selectedUser={selectedUser}
+        users={users}
         menuItems={menuItems}
         activeMenu={activeMenu}
         onMenuClick={(id) => setActiveMenu(id)}
       />
-      </div>
-      <div className="w-full flex-1 bg-gray-50 lg:bg-gray-200 min-h-screen">
-        <HeaderBar 
-          selectedUser={selectedUser}
-          users={users}
-          menuItems={menuItems}
-           activeMenu={activeMenu}
-          onMenuClick={(id: string) => setActiveMenu(id)}
-
-        />
-       
-          {renderPage()}
-       
-      </div>
     </div>
+    {renderPage()}
+  </div>
+</div>
   );
 };
 

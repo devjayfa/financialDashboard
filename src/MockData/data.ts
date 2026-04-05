@@ -31,7 +31,7 @@ export const users:User[] = [
   },
    {
     id: 4,
-    role:"Admin",
+    role:"admin",
     username: "Admin",
     email: "david@example.com",
     profile: "/admin.avif",
@@ -59,12 +59,12 @@ export const transactions = [
   // FEB
   { id: 4, userId: 1, title: "Salary", amount: 120000, type: "income", category: "Job", date: "2026-02-01" },
   { id: 5, userId: 1, title: "Shopping", amount: 23000, type: "expense", category: "Lifestyle", date: "2026-02-12" },
-  { id: 6, userId: 1, title: "Food", amount: 9000, type: "expense", category: "Food", date: "2026-02-15" },
+  { id: 6, userId: 1, title: "Food", amount: 9000, type: "expense", category: "Education", date: "2026-02-15" },
 
   // MAR
   { id: 7, userId: 1, title: "Salary", amount: 125000, type: "income", category: "Job", date: "2026-03-01" },
   { id: 8, userId: 1, title: "Food", amount: 11000, type: "expense", category: "Food", date: "2026-03-10" },
-  { id: 9, userId: 1, title: "Bills", amount: 8000, type: "expense", category: "Housing", date: "2026-03-18" },
+  { id: 9, userId: 1, title: "Bills", amount: 8000, type: "expense", category: "Bills", date: "2026-03-18" },
 
   // APR
   { id: 10, userId: 1, title: "Salary", amount: 125000, type: "income", category: "Job", date: "2026-04-01" },

@@ -22,7 +22,7 @@ export default function StatusButton({
   return (
     
     <span className={`${textSize || 'text-xs'} font-semibold ${bgColor || 'bg-green-100'} ${borderColor ? `border border-${borderColor}` : 'border border-green-600'} 
-    ${Ypadding || 'py-1'} ${Xpadding || 'px-2'} ${rounded || 'rounded-xl'} ${textColor || 'text-green-800'}`}>
+    ${Ypadding || 'py-1'} ${Xpadding || 'px-2'} ${rounded || 'rounded-xl'} ${textColor || 'text-green-800'} ` }>
           {content}
         </span>
   )

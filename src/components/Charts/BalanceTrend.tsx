@@ -1,59 +1,48 @@
-import {
-  LineChart,
-  Line,
- 
-  Tooltip,
-  ResponsiveContainer,
-  CartesianGrid,
-} from "recharts";
+import Box from '@mui/material/Box';
+import { LineChart } from '@mui/x-charts/LineChart';
 
-const data = [
-  { day: "january", balance: 1200 },
-  { day: "february", balance: 1400 },
-  { day: "march", balance: 1300 },
-  { day: "april", balance: 1700 },
-  { day: "may", balance: 1600 },
-  { day: "june", balance: 1900 },
-  { day: "july", balance: 2100
-   },
-    { day: "August", balance: 2100
-   },
-    { day: "september", balance: 2100
-   },
-];
 
-export default function BalanceTrend() {
+interface Props {
+  incomeData: number[];
+  expenseData: number[];
+  months: string[];
+}
+
+export default function BalanceTrend({ incomeData, expenseData, months }: Props) {
   return (
-    <div className="bg-white px-2 py-7 lg:p-5  rounded-md shadow-lg lg:shadow w-full h-50 lg:h-100">
-      
-      <h2 className="text-base text-[#2A0134] lg:text-[black] lg:text-lg font-semibold mb-4">
-        Balance Trend
-      </h2>
+    <>
+    <div className='bg-white w-full rounded-xl shadow p-4 hidden lg:block'>
+      <h2 className="text-lg font-semibold mb-3">Income vs Expense</h2>
 
-      <ResponsiveContainer width="100%" height="90%" >
-        <LineChart data={data}>
-
-          <CartesianGrid strokeDasharray="2 3" />
-              {/* <YAxis  /> */}
-          
-           
-          {/* <XAxis dataKey="day"  tick={{ fontSize: 10, color:"text-[#2A0134]" }} /> */}
-          
-
-          <Tooltip />
-
-          <Line
-            type="monotone"
-            dataKey="balance"
-            stroke="#762e88"
-            strokeWidth={3}
-            dot={{ r: 4 }}
-          />
-
-        </LineChart>
-      </ResponsiveContainer>
-
+      <Box sx={{ width: '100%', height: 300 }}>
+        <LineChart
+          series={[
+            { data: incomeData, label: 'Income' },
+            { data: expenseData, label: 'Expense' },
+          ]}
+          xAxis={[{ scaleType: 'point', data: months }]}
+        />
+      </Box>
     </div>
+    <div className='bg-white w-full rounded-xl shadow-lg py-5 px-1 block lg:hidden h-82.5'>
+      <h2 className="text-lg font-semibold mb-3 px-4">Income vs Expense</h2>
+
+     <Box sx={{ width: '100%', height: 300 }}>
+  <LineChart
+    series={[
+      { data: incomeData, label: 'Income' },
+      { data: expenseData, label: 'Expense' },
+    ]}
+    xAxis={[{ scaleType: 'point', data: months }]}
     
+    sx={{
+      "& .MuiChartsAxis-root": {
+        display: "none",
+      },
+    }}
+  />
+</Box>
+    </div>
+    </>
   );
 }

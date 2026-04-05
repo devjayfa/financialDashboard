@@ -17,7 +17,7 @@ export default function Sidebar({
      onMenuClick 
 }: SidebarProps) {
   return (
-    <div className="h-screen w-64 bg-white border-r border-gray-200 p-5">
+    <div className="fixed h-screen w-64 bg-white border-r border-gray-200 p-5">
 
 <div className="hidden lg:flex items-center gap-3 text-xl font-bold text-gray-800 mb-8">
          <img

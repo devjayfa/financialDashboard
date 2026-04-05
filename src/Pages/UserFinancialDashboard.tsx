@@ -3,6 +3,8 @@ import ProgressBar from "../components/ProgressBar";
 import SummaryCard from "../components/SummaryCard";
 import BalanceTrend from "../components/Charts/BalanceTrend";
 import { useSelector } from "react-redux";
+import { RiArrowLeftDownLongLine, RiArrowRightUpLongLine, RiMoneyDollarCircleLine } from "react-icons/ri";
+
 
 export default function UserFinancialDashboard() {
 
@@ -78,21 +80,21 @@ const getFeedback = (value: number) => {
    
        const Cards = [
   {
-    Icon: "Rs",
+    Icon: RiMoneyDollarCircleLine,
     title: "Balance",
     amount: `$${totalbalance.toFixed(2)}`,
     feedback: getFeedback(balancePercentage),
     percentage: `${balancePercentage.toFixed(1)}%`,
   },
   {
-    Icon: "Rs",
+    Icon:  RiArrowLeftDownLongLine ,
     title: "Income",
     amount: `$${currentIncome.toFixed(2)}`,
     feedback: getFeedback(incomePercentage),
     percentage: `${incomePercentage.toFixed(1)}%`,
   },
   {
-    Icon: "Rs",
+    Icon: RiArrowRightUpLongLine,
     title: "Expense",
     amount: `$${currentExpense.toFixed(2)}`,
     feedback: getFeedback(expensePercentage),
@@ -137,6 +139,22 @@ const progressBar = Object.keys(categoryMap).map((category) => {
   };
 });
 
+const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep"];
+
+const incomeData = new Array(12).fill(0);
+const expenseData = new Array(12).fill(0);
+
+userTransactions.forEach((t: any) => {
+  const date = new Date(t.date);
+  const monthIndex = date.getMonth();
+
+  if (t.type === "income") {
+    incomeData[monthIndex] += t.amount;
+  } else {
+    expenseData[monthIndex] += t.amount;
+  }
+});
+
   return (
   
     <main className="py-9 px-5">
@@ -158,11 +176,15 @@ const progressBar = Object.keys(categoryMap).map((category) => {
               ))
             }
           </div>
-          <BalanceTrend />
+          <BalanceTrend 
+          incomeData={incomeData}
+         expenseData={expenseData}
+         months={months}
+          />
         </div>
         <div className="bg-white p-5 rounded-md shadow-lg lg:shadow space-y-4">
           <h2 className="text-base lg:text-lg text-[#2A0134] lg:text-[black] font-semibold mb-2">
-            Spending Breakdown
+            Spending Breakdown(Monthly)
           </h2>
            {
               progressBar.map((bar,index)=>(

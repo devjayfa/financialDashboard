@@ -1,7 +1,11 @@
 
+interface SearchBarProps{
+  onSearch:(value:string)=>void
+}
 
-
-export default function SearchBar() {
+export default function SearchBar({
+  onSearch
+}:SearchBarProps) {
   return (
   <div className=" block">
   <div className="flex w-full  overflow-hidden  bg-white rounded-full lg:rounded-xl border-2 border-[#2A0134]/30">
@@ -11,12 +15,13 @@ export default function SearchBar() {
       type="text"
       placeholder="Search here"
       className="flex-1 px-4 py-2 lg:py-3 text-sm text-[#2A0134] focus:outline-none"
+      onChange={(e) => onSearch(e.target.value)}
     />
 
  
-    <div className="bg-[#2A0134] px-6 rounded-full lg:rounded-xl flex items-center justify-center">
+    <div className="bg-white px-6 rounded-full lg:rounded-xl flex items-center justify-center">
       <svg
-        className="w-4 h-4 text-white"
+        className="w-4 h-4 text-[#2A0134]"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"

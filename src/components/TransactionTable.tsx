@@ -3,11 +3,13 @@ import StatusButton from "./StatusButton";
 interface TransactionTableProps {
   data: any[];
   headers?: string[];
+  isAdmin?:boolean;
 }
 
 export default function TransactionTable({ 
   data, 
-  headers 
+  headers ,
+  isAdmin
 }: TransactionTableProps) {
  
 
@@ -16,16 +18,23 @@ export default function TransactionTable({
 
   <table className="w-full text-md border-collapse">
 
-    <thead>
-      <tr className="bg-gray-300 text-left text-[#2A0134]">
-        {
-          headers?.map((header, index) => (
-            <th key={index} className="py-3 px-4">{header}</th>
-          ))
-        }
-        
-      </tr>
-    </thead>
+    
+     <thead>
+  <tr className="bg-gray-300 text-left text-[#2A0134]">
+    
+    {headers?.map((header, index) => (
+      <th key={index} className="py-3 px-4">
+        {header}
+      </th>
+    ))}
+
+    {isAdmin && (
+      <th className="py-3 px-4">Actions</th>
+    )}
+
+  </tr>
+</thead>
+    
 
     <tbody>
       {data.map((item, index) => (
@@ -51,6 +60,17 @@ export default function TransactionTable({
             rounded="rounded-md"
              />
           </td>
+          {isAdmin &&
+          <td className="py-3 px-4 flex gap-2">
+  <button className="px-3 py-1 text-xs bg-blue-100 text-blue-700 rounded-md">
+    Edit
+  </button>
+
+  <button className="px-3 py-1 text-xs bg-red-100 text-red-700 rounded-md">
+    Delete
+  </button>
+</td>
+}
         </tr>
       ))}
     </tbody>
