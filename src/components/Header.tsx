@@ -52,7 +52,7 @@ export default function HeaderBar(
       </div>   
       <div className="flex items-center gap-2  ">
         
-  <div className="w-10 h-10 rounded-full">
+  <div className=" cursor-pointer w-10 h-10 rounded-full">
     <img
       src={selectedUser?.profile || "/admin.avif"}
       alt="Profile"
@@ -69,7 +69,7 @@ export default function HeaderBar(
      
     <RiArrowDownSLine
     onClick={handleClick}
-    className="text-black"
+    className="text-black cursor-pointer"
     />
     </div>
 
