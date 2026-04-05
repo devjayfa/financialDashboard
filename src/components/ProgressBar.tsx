@@ -16,7 +16,7 @@ export default function ProgressBar({
   return (
     <div className="w-full">
 
-  <div className="text-sm text-gray-800 dark:text-gray-100 mb-1 text-left">
+  <div className="text-sm text-gray-800  mb-1 text-left">
     {caption}
   </div>
 
