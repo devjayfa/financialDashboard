@@ -1,9 +1,9 @@
 #Live Demo Url
 https://budgixjayfa.netlify.app/
 
-#Locally check
--run npm install,
--http://localhost:5173/
+#Locally check:-
+run npm install,
+http://localhost:5173/
 
 #Toolkits
 Redux-for state management
